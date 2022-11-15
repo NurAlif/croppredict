@@ -36,7 +36,7 @@ if nim != "":
             if x['NIM'] == nim :
                 data = 1
                 mhs = x["nama"]
-                st.header("Maaf, anda belum diterima. Tetap semangat!")
+                st.header("Maaf untuk saat ini belum diterima. Semangat dan selamat mencoba lagi di tahun depan.. Tetap semangat!")
                 st.write("Nama : "+mhs)
                 break
         if data == 0:
