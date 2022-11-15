@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 import json
 
 title_alignment="""
@@ -16,4 +17,32 @@ title_alignment="""
     """
 st.markdown(title_alignment, unsafe_allow_html=True)
 
-st.title("Crop Recomendation Web App")
+nim = st.text_input("Masukan NIM : ")
+
+dataraw = json.load(open("finalis.json"))
+df = pd.DataFrame(data=dataraw["finalis"])
+
+if nim != "":
+
+    diterima = None
+    mhs = ""
+    for x in dataraw["finalis"]:
+        if x["NIM"] == nim:
+            mhs = x["nama"]
+            diterima = 1
+    if diterima == None:
+        data = 0
+        for x in dataraw["pendaftar"]:
+            if x['NIM'] == nim :
+                data = 1
+                mhs = x["nama"]
+                st.header("Maaf, anda belum diterima. Tetap semangat!")
+                st.write("Nama : "+mhs)
+                break
+        if data == 0:
+            st.header("Data tidak ditemukan!")
+
+    else:
+        st.title("Selamat anda diterima!")
+        st.write("Nama : "+mhs)
+    
