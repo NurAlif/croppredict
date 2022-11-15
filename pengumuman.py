@@ -17,6 +17,8 @@ title_alignment="""
     """
 st.markdown(title_alignment, unsafe_allow_html=True)
 
+st.title("Pengumuman PAB Tim Al-'Aadiyaat 2022 - External")
+
 nim = st.text_input("Masukan NIM : ")
 
 dataraw = json.load(open("finalis.json"))
@@ -36,13 +38,13 @@ if nim != "":
             if x['NIM'] == nim :
                 data = 1
                 mhs = x["nama"]
-                st.header("Maaf untuk saat ini, Anda belum diterima. Tetap semangat!!")
+                st.header("Maaf untuk saat ini, Anda belum diterima. Jangan putus asa dan tetap semangat karna masih banyak kesempatan untuk berprestasi. Terimakasih🙏")
                 st.write("Nama : "+mhs)
                 break
         if data == 0:
             st.header("Data tidak ditemukan!")
 
     else:
-        st.title("Selamat anda diterima!")
+        st.title("🎉Selamat anda diterima!🎉")
         st.write("Nama : "+mhs)
     
