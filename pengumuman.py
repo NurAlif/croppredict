@@ -1,6 +1,5 @@
 import streamlit as st
 import json
-from PIL import Image
 
 title_alignment="""
     <style>
