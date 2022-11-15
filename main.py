@@ -12,7 +12,7 @@ title_alignment="""
     text-align: center
     }
     div:has(> img){
-        width: 100% !important
+        width: 100% !important  
     }
     img{
         align-self: center
