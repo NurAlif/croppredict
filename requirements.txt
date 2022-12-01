@@ -1,4 +1,4 @@
-
+altair
 streamlit
 tensorflow
 xgboost
