@@ -6,6 +6,11 @@ import altair as alt
 import json
 from PIL import Image
 
+st.set_page_config(
+    page_title="Deteksi",
+    page_icon="👋",
+)
+
 title_alignment="""
     <style>
     h1, h3, h6 {
@@ -39,31 +44,41 @@ def analyze(input_data):
 
 input_values = np.zeros(7)
 
-st.title("Crop Recomendation Web App")
+st.markdown("""
+   <style>
+   p {
+        background-image: url('bg.jpg');
+   }
+   </style>
+   """,
+   unsafe_allow_html=True)
+
+st.image(Image.open("logo.png"), width=150)
+st.title("Rekomendasi Tanaman Soilmatch")
 col1, col2 = st.columns(2)
 
 with col1:
-    input_values[0] = st.slider('Ratio of Nitrogen content in soil (%)', .0, 100.0, value=90.0)
-    input_values[1] = st.slider('Ratio of Phosphorous content in soil (%)', .0, 100.0, value=42.5)
-    input_values[2] = st.slider('Ratio of Potassium content in soil (%)', .0, 100.0, value=43.4)
-    input_values[3] = st.number_input('Temperature (°C)', value=20.2)
+    input_values[0] = st.slider('Kandungan nitrogen dalam tanah (%)', .0, 100.0, value=90.0)
+    input_values[1] = st.slider('Kandungan fosfor dalam tanah (%)', .0, 100.0, value=42.5)
+    input_values[2] = st.slider('Kandungan potasium dalam tanah (%)', .0, 100.0, value=43.4)
+    input_values[3] = st.number_input('Temperatur udara(°C)', value=20.2)
     # input_values[4] = st.slider('Relative humidity (%)', .0, 100.0, value=82.1)
-    input_values[4] = st.number_input('Relative humidity (%)', value=82.5)
-    input_values[5] = st.number_input('pH value of the soil', value=6.5)
-    input_values[6] = st.number_input('Rainfall intensity (mm)', value=200.9)
+    input_values[4] = st.number_input('Kelembapan udara (%)', value=82.5)
+    input_values[5] = st.number_input('Kandungan Asam (Ph)', value=6.5)
+    input_values[6] = st.number_input('Intensitas Hujan (mm)', value=200.9)
 
 with col2:
     new_title = """
     <div style="border-style: solid;padding: 10px;border-radius: 10px;border-width: 1px;margin: 5px;">
-        <h6> Costumize inputs to desired values! </h6>
-        <p style="text-align: center; text-size: "> The output will be updated once the input changed </p>
+        <h6> Sesuaikan parameter masukan! </h6>
+        <p style="text-align: center; text-size: "> Keluaran akan otomatis menyesuaikan ketika parameter dirubah </p>
     </div>
     """
 
     st.markdown(new_title, unsafe_allow_html=True)
     st.header("")
     st.header("")
-    with st.spinner('Wait for it...'):
+    with st.spinner('Tunggu sebentar...'):
         result = analyze(input_values)
         idx = np.argmax(result)
         st.markdown("### " + labels[idx])
@@ -74,11 +89,7 @@ with col2:
         df = df.sort_values(by=['data'], ascending=False)
         df = df.head(3)
         st.header("")
-        st.header("")
-        chart = (alt.Chart(df).mark_bar().encode(
-                    x=alt.X("data", title="Probability"),
-                    y=alt.Y("labels", title=" ", sort='-x')
-                ))
-        st.altair_chart(chart, use_container_width=True)
+
+        st.write("Metode tradisional untuk bercocok tanam padi adalah membanjiri sawah saat, atau setelah, menanam bibit muda. Metode sederhana ini membutuhkan perencanaan irigasi yang baik tetapi mengurangi pertumbuhan tanaman gulma dan hama yang kurang kuat yang tidak memiliki kondisi pertumbuhan terendam, dan mencegah hama.")
 
     
