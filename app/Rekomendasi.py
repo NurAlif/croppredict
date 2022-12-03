@@ -29,6 +29,7 @@ crops = json.load(open("crops.json"))
 
 labels = crops["labels"]
 imgs = crops['imgs']
+descs = crops['desc']
 
 class_len = 22
 
@@ -43,20 +44,14 @@ def analyze(input_data):
 
 input_values = np.zeros(7)
 
-st.markdown("""
-   <style>
-   p {
-        background-image: url('bg.jpg');
-   }
-   </style>
-   """,
-   unsafe_allow_html=True)
+
 
 st.image(Image.open("logo.png"), width=150)
 st.title("Rekomendasi Tanaman Soilmatch")
 col1, col2 = st.columns(2)
 
 with col1:
+    st.button('❔Bantuan')
     input_values[0] = st.slider('Kandungan nitrogen dalam tanah (%)', .0, 100.0, value=90.0)
     input_values[1] = st.slider('Kandungan fosfor dalam tanah (%)', .0, 100.0, value=42.5)
     input_values[2] = st.slider('Kandungan potasium dalam tanah (%)', .0, 100.0, value=43.4)
@@ -67,7 +62,7 @@ with col1:
 
 with col2:
     new_title = """
-    <div style="border-style: solid;padding: 10px;border-radius: 10px;border-width: 1px;margin: 5px;">
+    <div style="border-style: solid;padding: 10px;border-radius: 10px;border-width: 1px;margin: 10px;">
         <h6> Sesuaikan parameter masukan! </h6>
         <p style="text-align: center; text-size: "> Keluaran akan otomatis menyesuaikan ketika parameter dirubah </p>
     </div>
@@ -88,6 +83,6 @@ with col2:
         df = df.head(3)
         st.header("")
 
-        st.write("Metode tradisional untuk bercocok tanam padi adalah membanjiri sawah saat, atau setelah, menanam bibit muda. Metode sederhana ini membutuhkan perencanaan irigasi yang baik tetapi mengurangi pertumbuhan tanaman gulma dan hama yang kurang kuat yang tidak memiliki kondisi pertumbuhan terendam, dan mencegah hama.")
+        st.write(descs[idx])
 
     
