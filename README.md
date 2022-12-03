@@ -1,3 +1,4 @@
+Yang perlu diperbaikin:
 - logo dibuat lebih jelas lebih bagus untuk kedua tema terang/gelap
 - gambar disesuaikan
 - dikasih penjelasan di setiap tanaman setiap tanaman dikasih kalimat Tanah anda cocok ditanam tanaman <papaya> ..., tanaman pepaya ... tanaman papaya ...
@@ -8,4 +9,5 @@
 - sidebar dikasih icon ig, sosmed
 - bikin ig buat soilmatch (ignya kosong aja ato dikasih 1 post tentang aplikasi)
 - bikin testi di halaman tentang
-- bikin halaman masukan
+- bikin halaman masukan (ulasan)
+- di halaman rekomendasi kasih tombol tanda tanya yang mengarah ke halaman panduan
