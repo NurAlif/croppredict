@@ -1,0 +1,11 @@
+- logo dibuat lebih jelas lebih bagus untuk kedua tema terang/gelap
+- gambar disesuaikan
+- dikasih penjelasan di setiap tanaman setiap tanaman dikasih kalimat Tanah anda cocok ditanam tanaman <papaya> ..., tanaman pepaya ... tanaman papaya ...
+- bikin profil kita (asal univ, jurusan, peran, photo) pembuat di halaman tentang termasuk bapa kita.
+- halaman tentang dikasih logo kampus merdeka orbit ventura dan lain2
+- panduan dibikin ada ss-annya. Dibuat lebih jelas. Dikasih keterangan parameter2nya sama alat2 yang buat dapettin pengukurannya apa (misal ph tanah, diukur pake phmeter, dll).
+- sidebar dikasih logo aplikasi di paling atas
+- sidebar dikasih icon ig, sosmed
+- bikin ig buat soilmatch (ignya kosong aja ato dikasih 1 post tentang aplikasi)
+- bikin testi di halaman tentang
+- bikin halaman masukan

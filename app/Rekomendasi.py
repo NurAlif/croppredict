@@ -2,13 +2,12 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 import pandas as pd
-import altair as alt
 import json
 from PIL import Image
 
 st.set_page_config(
-    page_title="Deteksi",
-    page_icon="👋",
+    page_title="Rekomendasi tanaman",
+    page_icon="🌱",
 )
 
 title_alignment="""
@@ -62,7 +61,6 @@ with col1:
     input_values[1] = st.slider('Kandungan fosfor dalam tanah (%)', .0, 100.0, value=42.5)
     input_values[2] = st.slider('Kandungan potasium dalam tanah (%)', .0, 100.0, value=43.4)
     input_values[3] = st.number_input('Temperatur udara(°C)', value=20.2)
-    # input_values[4] = st.slider('Relative humidity (%)', .0, 100.0, value=82.1)
     input_values[4] = st.number_input('Kelembapan udara (%)', value=82.5)
     input_values[5] = st.number_input('Kandungan Asam (Ph)', value=6.5)
     input_values[6] = st.number_input('Intensitas Hujan (mm)', value=200.9)
