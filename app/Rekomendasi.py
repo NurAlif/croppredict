@@ -78,6 +78,8 @@ st.image(Image.open("imgs/logo.png"), width=150)
 st.title("Rekomendasi Tanaman Soilmatch")
 col1, col2 = st.columns(2)
 
+st.write("")
+
 with col1:
     # if st.button('❔Bantuan'):
     #     switch_page("1_Panduan")

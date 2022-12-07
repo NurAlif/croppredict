@@ -32,7 +32,7 @@ st.header("")
 
 st.markdown(
     """
-    Soilmatch adalah aplikasi yang dibuat oleh kelompok 3 Goldfarb pada program Studi Independen di Orbit Future Academy. Soil Match dapat digunakan untuk memprediksi tanaman yang cocok untuk ditanam berdasarkan kriteria tanah dan lingkungan. Aplikasi ini diharapkan dapat membantu para petani dalam pengambilan keputusan dalam menentukan jenis tanaman yang akan ditanam, sehingga bisa mendapatkan hasil yang maksimal dan kerugian yang cukup besar tidak terjadi nantinya.
+    Soilmatch adalah aplikasi yang dibuat oleh kelompok 3 Goldfarb pada program Studi Independen di Orbit Future Academy. Soilmatch dapat digunakan untuk memprediksi tanaman yang cocok untuk ditanam berdasarkan kriteria tanah dan lingkungan. Aplikasi ini diharapkan dapat membantu para petani dalam pengambilan keputusan dalam menentukan jenis tanaman yang akan ditanam, sehingga bisa mendapatkan hasil yang maksimal dan kerugian yang cukup besar tidak terjadi nantinya.
 """
 )
 
