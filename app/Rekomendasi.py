@@ -5,38 +5,10 @@ import pandas as pd
 import json
 from PIL import Image
 
-import re
-import warnings
-warnings.filterwarnings('ignore')
-
 st.set_page_config(
     page_title="Rekomendasi tanaman",
     page_icon="🌱",
 )
-
-def switch_page(page_name):
-    from streamlit import _RerunData, _RerunException
-    from streamlit.source_util import get_pages
-
-    def standardize_name(name: str) -> str:
-        return name.lower().replace("_", " ")
-    
-    page_name = standardize_name(page_name)
-
-    pages = get_pages("1_Panduan.py")
-
-    for page_hash, config in pages.items():
-        if standardize_name(config["page_name"]) == page_name:
-            raise _RerunException(
-                _RerunData(
-                    page_script_hash=page_hash,
-                    page_name=page_name,
-                )
-            )
-
-    page_names = [standardize_name(config["page_name"]) for config in pages.values()]
-
-    raise ValueError(f"Could not find page {page_name}. Must be one of {page_names}")
 
 title_alignment="""
     <style>
@@ -53,17 +25,15 @@ title_alignment="""
     """
 st.markdown(title_alignment, unsafe_allow_html=True)
 
+class_len = 22
+
 crops = json.load(open("crops.json"))
 
 labels = crops["labels"]
 imgs = crops['imgs']
 descs = crops['desc']
 
-class_len = 22
-
-
 loaded_model = tf.keras.models.load_model("lstm.h5")
-
 
 def analyze(input_data):
     input_data = input_data.reshape(1, 7, 1)
